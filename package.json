@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve -o",
     "build": "ng build",
+    "build:prod": "ng build --output-path prod --base-href /nikolai-frontend-dev/ && mv prod/browser/* prod/ && rmdir prod/browser",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
