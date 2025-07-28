@@ -1,0 +1,8 @@
+<section class="projects">
+  <h2 class="projects-title">Мои основные проекты</h2>
+  <div class="projects-list">
+    @for (data of dataProjects; track data.id) {
+      <app-project-card [data]="data" [isLink]="true"></app-project-card>
+    }
+  </div>
+</section>

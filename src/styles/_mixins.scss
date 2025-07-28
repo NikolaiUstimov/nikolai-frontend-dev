@@ -1,0 +1,27 @@
+@mixin h2-style {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+@mixin animation-link {
+  color: transparent;
+  background-image: linear-gradient(
+      45deg,
+      #729bd7,
+      #f8ebf0,
+      #9d9fb0,
+      #b19bf1,
+      #a6dfe1,
+      #729bd7
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: gradientAnimation 9s linear infinite;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,83 @@
+@use 'variables' as v;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  padding: 20px 0;
+  border-bottom: 2px solid v.$text-light-base;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 150px;
+}
+
+.nav {
+
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    text-transform: uppercase;
+
+    li {
+      a {
+        &:hover {
+          transition: all ease-in-out .3s;
+          color: v.$text-light-base-hover;
+        }
+      }
+    }
+  }
+}
+
+::ng-deep .mat-mdc-menu-panel {
+  background-color: v.$text-light-base !important;
+}
+
+::ng-deep .mat-mdc-menu-item, .mat-mdc-menu-item:visited, .mat-mdc-menu-item:link {
+  color: v.$text-dark-base !important;
+}
+
+::ng-deep .mat-mdc-menu-item:hover {
+  background-color: v.$text-light-dark-base !important;
+}
+
+::ng-deep .mat-mdc-menu-item-text {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 20px !important;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+.content .container {
+  overflow-y: auto;
+}
+
+.footer {
+  flex-shrink: 0;
+  padding: 20px 0;
+  border-top: 2px solid v.$text-light-base;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .footer-name {
+      text-transform: uppercase;
+    }
+  }
+}

@@ -1,0 +1,80 @@
+@use "mixins" as m;
+
+$orbit-color: rgba(255, 255, 255, .3);
+$main-skill: 70px;
+$skill: 50px;
+
+$skills: (
+  html: (size: 140px, speed: 5s, start: 0deg),
+  css: (size: 230px, speed: 7s, start: -250deg),
+  sass: (size: 310px, speed: 10s, start: -170deg),
+  bootstrap: (size: 400px, speed: 15s, start: -260deg),
+  ts: (size: 510px, speed: 20s, start: -110deg),
+  js: (size: 600px, speed: 25s, start: -40deg),
+  git: (size: 690px, speed: 30s, start: -180deg),
+  github: (size: 780px, speed: 35s, start: -280deg),
+  gitlab: (size: 870px, speed: 40s, start: -30deg),
+  docker: (size: 950px, speed: 45s, start: -310deg),
+);
+
+.skills-list {
+  @include m.flex-center;
+}
+
+.skills-wrapper {
+  @include m.flex-center;
+  width: 1000px;
+  height: 1000px;
+  position: relative;
+  top: -100px;
+  overflow: hidden;
+  transform-origin: bottom center;
+  transform: perspective(1000px) rotateX(10deg) skew(10deg);
+  z-index: 2;
+}
+
+.skill-angular {
+  width: $main-skill;
+  height: $main-skill;
+  cursor: pointer;
+}
+
+.docker-orbit {
+  transform: rotate(-90deg);
+}
+
+@each $skill, $data in $skills {
+  $size: map-get($map: $data, $key: size);
+  $speed: map-get($map: $data, $key: speed);
+  $start: map-get($map: $data, $key: start);
+
+  @keyframes #{$skill}-orbit {
+    from {
+      transform: rotate($start);
+    }
+    to {
+      transform: rotate($start + 360deg);
+    }
+  }
+
+  .#{$skill}-orbit {
+    position: absolute;
+    width: $size;
+    height: $size;
+    border: 1px solid $orbit-color;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    animation: #{$skill}-orbit $speed linear infinite;
+    cursor: pointer;
+    .#{$skill} {
+      position: relative;
+      bottom: 25px;
+    }
+  }
+}
+
+
+
+

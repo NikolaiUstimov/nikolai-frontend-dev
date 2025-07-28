@@ -1,0 +1,51 @@
+@use 'animations';
+@use "mixins" as m;
+
+.project-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 360px;
+  height: 100%;
+  padding-bottom: 18px;
+
+  .project-img {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 18px;
+
+    img {
+      object-fit: cover;
+      animation: imgTranslate 3.5s ease-in-out infinite alternate;
+    }
+
+    img:hover {
+      cursor: pointer;
+    }
+  }
+
+  .project-title {
+    flex-shrink: 0;
+    font-size: 20px;
+    padding-bottom: 10px;
+    min-height: 60px;
+  }
+
+  .project-desc {
+    flex-grow: 1;
+    font-size: 14px;
+    text-align: justify;
+    word-break: break-all;
+  }
+
+  .project-link {
+    flex-shrink: 0;
+    display: block;
+    width: 100%;
+    text-align: right;
+    margin-top: 20px;
+    @include m.animation-link;
+  }
+}
+

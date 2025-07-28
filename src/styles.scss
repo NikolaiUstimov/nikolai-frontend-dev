@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+@use "global";
+@use "variables" as v;
+@use "fonts";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.svg30 {
+  width: 30px;
+  height: 30px;
+}
+
+.svg40 {
+  width: 40px;
+  height: 40px;
+}
+
+.svg50 {
+  width: 50px;
+  height: 50px;
+}
+
+.svg70 {
+  width: 70px;
+  height: 70px;
+}
+
+.svg120 {
+  width: 120px;
+  height: 120px;
+}
+
+.active {
+  color: v.$text-light-base-hover;
+}

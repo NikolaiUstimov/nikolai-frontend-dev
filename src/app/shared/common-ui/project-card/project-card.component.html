@@ -1,0 +1,22 @@
+<figure class="project-wrapper">
+  <div class="project-img">
+    <img
+      src="{{data?.img}}"
+      alt="slide-{{data?.id}}"
+      width="100%"
+      height="auto"
+      loading="lazy"
+    />
+  </div>
+  <figcaption class="project-title">{{data?.title}}</figcaption>
+  <p class="project-desc">{{data?.desc}}</p>
+  @if (isLink) {
+    <a
+      class="project-link"
+      href="{{data?.url}}"
+      target="_blank"
+    >
+      Посмотреть код проекта >>
+    </a>
+  }
+</figure>

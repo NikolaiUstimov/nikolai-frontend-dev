@@ -1,0 +1,119 @@
+@use "animations";
+@use "mixins" as m;
+
+.hero {
+  padding-top: 20px;
+}
+
+.hero-main {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 60px;
+
+  .hero-title {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: .1rem;
+    margin-bottom: 50px;
+  }
+
+  .hero-desc {
+    font-size: 22px;
+    line-height: 120%;
+    margin-bottom: 40px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    font-size: 22px;
+    line-height: 120%;
+
+    .hero-link {
+      padding: 10px 20px;
+      background-color: #714bf8;
+      border-radius: 8px;
+      transition: background-color .3s;
+
+      &:hover {
+        background-color: #6136f6;
+      }
+    }
+  }
+
+  .main-img img {
+    border-radius: 18px;
+  }
+}
+
+.hero-project-title {
+  @include m.h2-style;
+  margin-bottom: 50px;
+}
+
+.hero-projects {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.hero-actions {
+  width: 100%;
+  text-align: right;
+  margin-bottom: 60px;
+
+  .hero-link-projects {
+    font-size: 26px;
+    font-weight: 700;
+    @include m.animation-link;
+    margin-right: 10px;
+  }
+}
+
+.skills {
+
+  .skills-title {
+    @include m.h2-style;
+    margin-bottom: 40px;
+  }
+
+  .skills-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
+    list-style: none;
+    margin-bottom: 40px;
+    visibility: hidden;
+
+    .skills-item {
+      display: block;
+      transition: .4s;
+      transform-origin: 50% 50%;
+
+    }
+  }
+}
+
+.skills-actions {
+  width: 100%;
+  text-align: right;
+  margin-bottom: 60px;
+
+  .skills-link {
+    font-size: 26px;
+    font-weight: 700;
+    @include m.animation-link;
+    margin-right: 10px;
+  }
+}
+
+.animate-active-translate {
+  animation: translate-in 2s linear;
+}
+
+.animate-active-rotate {
+  animation: roll-in 2s linear;
+}

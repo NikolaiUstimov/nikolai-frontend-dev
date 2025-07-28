@@ -1,0 +1,72 @@
+<section class="hero">
+  <article class="hero-main">
+    <div class="hero-main-text">
+      <h1 class="hero-title">Привет, меня зовут Николай, я Frontend-разработчик</h1>
+      <p class="hero-desc">Создаю Web-приложения и сайты с уклоном на фреймворк Angular, а также на чистых JS и TS</p>
+      <div class="hero-actions">
+        <p class="hero-actions-text">Ознакомиться с моим резюме</p>
+        <a
+          class="hero-link"
+          href="https://krasnodar.hh.ru/resume/eb0df496ff092614b90039ed1f497978675757"
+          target="_blank"
+        >
+          Перейти
+        </a>
+      </div>
+    </div>
+    <figure class="main-img">
+      <img
+        src="images/image.png"
+        alt="Аватар"
+        width="540"
+        height="400"
+        loading="lazy"
+      >
+    </figure>
+  </article>
+
+  <h2 class="hero-project-title">Вот некоторые из моих проектов</h2>
+
+  <div class="hero-projects">
+    @for (project of dataProjects | slice:0:3; track project.id) {
+      <app-project-card [data]="project"></app-project-card>
+    }
+  </div>
+
+  <div class="hero-actions">
+    <a
+      class="hero-link-projects"
+      routerLink="/projects"
+    >
+      Увидеть больше проектов >>
+    </a>
+  </div>
+</section>
+
+<section class="skills">
+  <h2 class="skills-title">Основные навыки</h2>
+  <ul class="skills-list" #skillsList>
+    <li class="skills-item" #skillsItem>
+      <svg class="svg120" icon="html"></svg>
+    </li>
+    <li class="skills-item" #skillsItem>
+      <svg class="svg120" icon="css"></svg>
+    </li>
+    <li class="skills-item" #skillsItem>
+      <svg class="svg120" icon="ts"></svg>
+    </li>
+    <li class="skills-item" #skillsItem>
+      <svg class="svg120" icon="angular"></svg>
+    </li>
+  </ul>
+
+  <div class="skills-actions">
+    <a
+      class="skills-link"
+      [routerLink]="['/about']"
+      [fragment]="'skills'"
+    >
+      Посмотреть все >>
+    </a>
+  </div>
+</section>

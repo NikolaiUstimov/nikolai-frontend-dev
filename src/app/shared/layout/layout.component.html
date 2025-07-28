@@ -1,0 +1,50 @@
+<header class="header">
+  <div class="container">
+    <figure class="logo">
+      <a routerLink="/">
+        <svg icon="logo4" class="svg40"></svg>
+      </a>
+    </figure>
+    <nav class="nav">
+      <ul>
+        <li>
+          <a routerLink="/about" [routerLinkActive]="'active'">Обо мне</a></li>
+        <li>
+          <a routerLink="/projects" [routerLinkActive]="'active'">Мои проекты</a></li>
+        <li>
+          <a routerLink="/contacts" [routerLinkActive]="'active'">Контакты</a></li>
+      </ul>
+    </nav>
+    <figure class="links">
+      <button
+        mat-button [matMenuTriggerFor]="menu"
+        type="button"
+      >
+        <svg icon="link" class="svg40"></svg>
+      </button>
+      <mat-menu class="mat-menu-header" #menu="matMenu">
+        <a href="https://github.com/NikolaiUstimov?tab=repositories" class="links-menu-item" target="_blank" mat-menu-item>
+          <span>Telegram</span>
+          <svg icon="telegram" class="svg30"></svg>
+        </a>
+        <a href="https://t.me/nikqwerty12" class="links-menu-item" target="_blank" mat-menu-item>
+          <span>GitHub</span>
+          <svg icon="github" class="svg30"></svg>
+        </a>
+      </mat-menu>
+    </figure>
+  </div>
+</header>
+
+<section class="content">
+  <div class="container" #container>
+    <router-outlet></router-outlet>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p class="footer-name">Устимов Николай</p>
+    <p class="footer-year">{{currentYear}}г.</p>
+  </div>
+</footer>

@@ -1,0 +1,78 @@
+@use "mixins" as m;
+@use "variables" as v;
+
+.contacts {
+  padding: 40px 0 40px 0;
+  margin-bottom: 30px;
+
+  .contacts-title {
+    @include m.h2-style;
+    margin-bottom: 40px;
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .contacts-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        a {
+          font-size: 24px;
+          &:hover {
+            transition: all ease-in-out .3s;
+            color: v.$text-light-base-hover;
+          }
+        }
+      }
+    }
+
+    .map {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .map-desc {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .map-frame {
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+.activity-time {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 20px 0;
+
+  .activity-time-title {
+    @include m.h2-style;
+    margin-bottom: 40px;
+  }
+
+  .activity-time-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 120px;
+
+    li {
+      font-size: 20px;
+      font-weight: 500;
+      font-style: italic;
+    }
+  }
+}

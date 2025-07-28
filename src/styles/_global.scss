@@ -1,0 +1,36 @@
+@import "variables";
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: -webkit-linear-gradient(135deg, rgb(63, 35, 77), rgb(82, 85, 182));
+  background: -moz-linear-gradient(135deg, rgb(63, 35, 77), rgb(82, 85, 182));
+  background: linear-gradient(135deg, rgb(63, 35, 77), rgb(82, 85, 182));
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: $text-light-base;
+}
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
