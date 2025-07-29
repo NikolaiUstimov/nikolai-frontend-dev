@@ -1,12 +1,12 @@
-@import "mixins";
-@import "animations";
+@use "mixins" as m;
+@use "animations";
 
 .about {
   padding-top: 40px;
   margin-bottom: 60px;
 
   .about-title {
-    @include h2-style;
+    @include m.h2-style;
     margin-bottom: 40px;
   }
 
@@ -35,14 +35,14 @@
 
     a {
       font-size: 22px;
-      @include animation-link;
+      @include m.animation-link;
     }
   }
 }
 
 .skills {
   .skills-title {
-    @include h2-style;
+    @include m.h2-style;
   }
 }
 
@@ -50,7 +50,7 @@
   margin-bottom: 60px;
 
   .hobby-title {
-    @include h2-style;
+    @include m.h2-style;
     margin-bottom: 40px;
   }
 
@@ -69,7 +69,7 @@
         height: 100px;
         border-radius: 50%;
         overflow: hidden;
-        @include flex-center;
+        @include m.flex-center;
         flex-shrink: 0;
       }
 

@@ -1,4 +1,4 @@
-@import "variables";
+@use "variables" as v;
 
 *,
 *:before,
@@ -22,11 +22,11 @@ body {
   height: 100vh;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
-  color: $text-light-base;
+  color: v.$text-light-base;
 }
 
 .container {
-  max-width: $container-width;
+  max-width: v.$container-width;
   margin: 0 auto;
 }
 
